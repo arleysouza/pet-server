@@ -11,7 +11,7 @@ router.use("/medicine", authentication, medicineRoute);
 router.use("/payment", authentication, paymentRoute);
 
 router.use( (_, res) => {
-	res.status(400).json({error:"Operação desconhecida"});
+	res.status(200).json({error:"Operação desconhecida"});
 });
 
 module.exports = router;

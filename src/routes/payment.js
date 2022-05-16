@@ -8,7 +8,7 @@ router.put("/update", update);
 router.get("/list", list);
 
 router.use( (_, res) => {
-	res.status(400).json({error:"Operação desconhecida com o pagamento"});
+	res.status(200).json({error:"Operação desconhecida com o pagamento"});
 });
 
 module.exports = router;

@@ -8,7 +8,7 @@ router.post("/create", create);
 router.put("/update/password", authentication, updatepassword);
 
 router.use( (_, res) => {
-	res.status(400).json({error:"Operação desconhecida com o usuário"});
+	res.status(200).json({error:"Operação desconhecida com o usuário"});
 });
 
 module.exports = router;
