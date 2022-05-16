@@ -11,7 +11,7 @@ class PetController {
 		return await Pet.findOne({ where: { iduser, name } })
 			.then(async (pet) => {
 				if (pet) {
-					return res.status(400).json({ error: `Você já possui um pet de nome ${name}` });
+					return res.status(200).json({ error: `Você já possui um pet de nome ${name}` });
 				}
 				return await Pet.create({iduser,name})
 				.then(async (pet) => {
@@ -71,7 +71,7 @@ class PetController {
 		let { idpet } = req.body;
 		idpet = (idpet || "").toString();
 		if( idpet === "" ){
-			return res.status(400).json({ error: "Forneça a identificação do pet" });
+			return res.status(200).json({ error: "Forneça a identificação do pet" });
 		}
 
 		return await Pet.findOne({ where: { idpet, iduser } })

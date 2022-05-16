@@ -56,7 +56,7 @@ class PaymentController {
     idpayment = (idpayment || "").toString();
     if (idpayment === "") {
       return res
-        .status(400)
+        .status(200)
         .json({ error: "Forneça a identificação do pagamento" });
     }
 
